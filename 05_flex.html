@@ -19,7 +19,7 @@
       /* > : 하위 요소 */
       .flex-container > * {
         width: 64px;
-        height: 64px;
+        /* height: 64px; */
         border: 1px solid red;
         background-color: beige;
         /* margin: 16px; */
@@ -31,6 +31,12 @@
         /* reverse -> flex item의 배치 순서 */
         /* flex-direction: row-reverse; */
         flex-direction: column-reverse;
+      }
+      .item {
+        width: 24px;
+        height: 24px;
+        background-color: aqua;
+        border: 1px solid gray;
       }
     </style>
   </head>
@@ -94,7 +100,49 @@
       <span>span</span>
       <p>p</p>
     </div>
+
     <!-- cross axis -> align items-->
     <!-- flex wrap + row/column item 배치-->
+    <div
+      class="flex-container"
+      style="height: 200px; align-items: center; justify-content: center"
+    >
+      <!--flex item : inline, block 다 무시-->
+      <div>div</div>
+      <span>span</span>
+      <p>p</p>
+    </div>
+
+    <div class="flex-container" style="height: 200px; align-items: stretch">
+      <!--flex item : inline, block 다 무시-->
+      <div>div</div>
+      <span>span</span>
+      <p>p</p>
+    </div>
+    <!--wrap-->
+    <!-- 1. 일반 flexbox는 overflow(넘침)-->
+    <div class="flex-container" style="flex-wrap: wrap">
+      <div style="width: 100px">box1</div>
+      <div style="width: 100px">box2</div>
+      <div style="width: 100px">box3</div>
+    </div>
+    <hr />
+    <!-- flex 겹침(2차원)-->
+    <div style="display: flex; flex-direction: column">
+      <!--위 아래로 아래의 것들을 배치-->
+      <div>
+        <!--왼쪽 오른쪽으로 배치-->
+        <div style="display: flex; flex-direction: row">
+          <div class="item">a1</div>
+          <div class="item">a2</div>
+          <div class="item">a3</div>
+        </div>
+        <div style="display: flex; flex-direction: row">
+          <div class="item">b1</div>
+          <div class="item">b2</div>
+          <div class="item">b3</div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

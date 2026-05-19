@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>William's Bootstrap Template</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <style>
+      /* 커스텀 스타일 (Bootstrap 유틸리티로 부족한 세밀한 부분 보정) */
+      body {
+        padding-top: 76px; /* Navbar 높이만큼 여백 확보 (fixed-top 사용 시) */
+      }
+      .hero-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 100px 0;
+      }
+      .card-hover-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+      }
+      .badge-custom {
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. Navigation Bar (Position: fixed-top, Flexbox 기반) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+      <div class="container">
+        <!-- 브랜드 로고 -->
+        <a class="navbar-brand fw-bold" href="#">
+          <i class="bi bi-bootstrap-fill text-primary me-2"></i>William's UI
+        </a>
+        
+        <!-- 모바일 토글 버튼 -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 네비게이션 링크 & 우측 버튼 (Flexbox align) -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+          </ul>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-light" type="button">Login</button>
+            <button class="btn btn-primary" type="button">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. Hero Section (Flex 정렬: justify-content-center, align-items-center) -->
+    <header class="hero-section d-flex align-items-center text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold text-dark mb-4">
+          Bootstrap 5 완벽 가이드
+        </h1>
+        <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px;">
+          Position, Flexbox, 그리고 Grid 시스템을 적극적으로 활용하여<br />
+          모든 디바이스에 적응하는 반응형(Responsive) 웹을 구축하세요.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#services" class="btn btn-primary btn-lg px-4 gap-3">시작하기</a>
+          <a href="#" class="btn btn-outline-secondary btn-lg px-4">문서 보기</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 3. Features / Services (Grid: row, col & Flex 적용) -->
+    <section id="services" class="py-5">
+      <div class="container py-4">
+        <div class="row text-center justify-content-center mb-5">
+          <div class="col-lg-6">
+            <h2 class="fw-bold">핵심 기능</h2>
+            <p class="text-muted">다양한 유틸리티 클래스로 레이아웃을 손쉽게 제어합니다.</p>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          <!-- 기능 1 -->
+          <div class="col-md-4">
+            <div class="p-4 border rounded bg-white shadow-sm h-100 d-flex flex-column align-items-center text-center card-hover-effect">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                <i class="bi bi-layout-text-window fs-3"></i>
+              </div>
+              <h4 class="fw-bold">Grid System</h4>
+              <p class="text-muted mt-2">12개의 컬럼(Column)을 바탕으로 복잡한 레이아웃을 반응형으로 쉽게 구성합니다.</p>
+            </div>
+          </div>
+          <!-- 기능 2 -->
+          <div class="col-md-4">
+            <div class="p-4 border rounded bg-white shadow-sm h-100 d-flex flex-column align-items-center text-center card-hover-effect">
+              <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                <i class="bi bi-boxes fs-3"></i>
+              </div>
+              <h4 class="fw-bold">Flexbox</h4>
+              <p class="text-muted mt-2">d-flex, justify-content, align-items 클래스를 활용하여 완벽한 정렬을 이룹니다.</p>
+            </div>
+          </div>
+          <!-- 기능 3 -->
+          <div class="col-md-4">
+            <div class="p-4 border rounded bg-white shadow-sm h-100 d-flex flex-column align-items-center text-center card-hover-effect">
+              <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                <i class="bi bi-pin-angle fs-3"></i>
+              </div>
+              <h4 class="fw-bold">Position</h4>
+              <p class="text-muted mt-2">absolute, relative, fixed, sticky 유틸리티로 요소의 위치를 자유롭게 고정시킵니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Card Gallery (Grid 반응형 처리 & Position-absolute 배지 활용) -->
+    <section id="gallery" class="py-5 bg-light">
+      <div class="container py-4">
+        <h2 class="fw-bold text-center mb-5">인기 프로젝트 갤러리</h2>
+        
+        <!-- row-cols를 이용한 반응형 카드 그리드 (모바일 1열, 태블릿 2열, 데스크탑 3열) -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          
+          <!-- 카드 1 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 position-relative card-hover-effect">
+              <!-- Position Absolute 배지 -->
+              <span class="position-absolute badge rounded-pill bg-danger badge-custom px-3 py-2">HOT</span>
+              <img src="https://picsum.photos/400/250?random=1" class="card-img-top" alt="Project 1">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold">E-Commerce 플랫폼</h5>
+                <p class="card-text text-muted flex-grow-1">장바구니와 결제 시스템이 연동된 반응형 쇼핑몰 UI 구현.</p>
+                <a href="#" class="btn btn-outline-primary mt-3 w-100">자세히 보기</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 2 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 position-relative card-hover-effect">
+              <span class="position-absolute badge rounded-pill bg-success badge-custom px-3 py-2">NEW</span>
+              <img src="https://picsum.photos/400/250?random=2" class="card-img-top" alt="Project 2">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold">관리자 대시보드</h5>
+                <p class="card-text text-muted flex-grow-1">차트와 통계 데이터를 한눈에 볼 수 있는 관리자 페이지 패널 구성.</p>
+                <a href="#" class="btn btn-outline-primary mt-3 w-100">자세히 보기</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 3 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 position-relative card-hover-effect">
+              <span class="position-absolute badge rounded-pill bg-primary badge-custom px-3 py-2">BEST</span>
+              <img src="https://picsum.photos/400/250?random=3" class="card-img-top" alt="Project 3">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold">포트폴리오 블로그</h5>
+                <p class="card-text text-muted flex-grow-1">CSS Grid와 Flex를 섞어 만든 개인 이력 및 포트폴리오 전시 블로그.</p>
+                <a href="#" class="btn btn-outline-primary mt-3 w-100">자세히 보기</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Footer (Flexbox justify-content-between 등 활용) -->
+    <footer class="bg-dark text-light py-5">
+      <div class="container">
+        <!-- 상단 정보 영역 -->
+        <div class="row mb-4">
+          <div class="col-md-5 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3"><i class="bi bi-bootstrap-fill text-primary me-2"></i>William's UI</h5>
+            <p class="text-secondary small">
+              부트스트랩의 기본 원리인 Grid System과 Flexbox, Position을 심도있게 다루며 반응형 웹 마스터를 목표로 합니다.
+            </p>
+          </div>
+          <div class="col-md-3 offset-md-1 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">바로가기</h5>
+            <ul class="list-unstyled text-secondary">
+              <li class="mb-2"><a href="#" class="text-decoration-none text-secondary custom-link">Home</a></li>
+              <li class="mb-2"><a href="#services" class="text-decoration-none text-secondary custom-link">Services</a></li>
+              <li class="mb-2"><a href="#gallery" class="text-decoration-none text-secondary custom-link">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="fw-bold mb-3">연락처</h5>
+            <ul class="list-unstyled text-secondary small">
+              <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>서울시 강남구 테헤란로</li>
+              <li class="mb-2"><i class="bi bi-envelope me-2"></i>contact@example.com</li>
+              <li class="mb-2"><i class="bi bi-telephone me-2"></i>02-1234-5678</li>
+            </ul>
+          </div>
+        </div>
+        
+        <hr class="border-secondary mb-4" />
+        
+        <!-- 하단 카피라이트 및 소셜 아이콘 영역 (Flex 정렬) -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <p class="mb-0 text-secondary small">&copy; 2026 William. All rights reserved.</p>
+          <div class="d-flex gap-3 mt-3 mt-md-0">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-github"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS (Bundle with Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
