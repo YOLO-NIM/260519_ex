@@ -20,6 +20,37 @@
       .container {
         border: 1px solid yellowgreen;
       }
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .static {
+        background-color: gray;
+        /* top, bottom/ left, right */
+        top: 12px;
+        left: 12px;
+        /* static이라 반응이 없음 */
+      }
+      .relative {
+        position: relative;
+        background-color: teal;
+        top: 12px;
+        left: 12px;
+        /* 하위 요소도 따라 올라감 */
+        z-index: 100;
+      }
+      .absolute {
+        position: absolute;
+        background-color: pink;
+        top: 12px;
+        left: 12px;
+      }
+      .fixed {
+        position: fixed;
+        background-color: orange;
+        top: 24px;
+        left: 16px;
+      }
     </style>
   </head>
   <body>
@@ -44,6 +75,41 @@
     </div>
     <hr />
     <!--emmet => 선택자의 문법을 바탕으로 (이외에도 좀 플러스) 간단하게 html 태그를 구조화하며 만들 수 있는 단툭어-->
+
+    <h3>Position</h3>
+    <div
+      style="
+        position: sticky;
+        width: 100%;
+        top: 10px;
+        height: 24px;
+        background-color: aqua;
+        /* 화면상 얼마나 높이에 있는지 */
+        z-index: 999;
+      "
+    >
+      sticky
+    </div>
+    <div style="position: relative">
+      <!--2개 이상의 클래스는 ' '로 이어서 작성-->
+      <div class="box static">
+        static
+        <div class="box absolute">absolute[2]</div>
+      </div>
+      <div class="box relative">
+        relative
+        <div class="box absolute">absolute[3]</div>
+      </div>
+      <!--staitc이 아닌 상위 요소를 기준으로 top, left를 적용하여 이동, 가장 높은 상위 요소는 body-->
+      <div class="box absolute">
+        absolute
+        <div class="box absolute">absolute[4]</div>
+      </div>
+      <div class="box fixed">
+        fixed
+        <div class="box absolute">absolute[5]</div>
+      </div>
+    </div>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   </body>
 </html>
