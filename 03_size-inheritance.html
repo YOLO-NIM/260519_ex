@@ -44,13 +44,33 @@
       voluptas itaque cum maxime accusamus minus quos maiores cumque.
       Perspiciatis porro reiciendis numquam sapiente distinctio ex incidunt
       facilis itaque illum!
+      <div style="font-size: 50%">
+        <!-- %는 상위 요소에서 관련 크기 값을 가져오겠다-->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sed
+        voluptas itaque cum maxime accusamus minus quos maiores cumque.
+        Perspiciatis porro reiciendis numquam sapiente distinctio ex incidunt
+        facilis itaque illum!
+      </div>
+      <!-- 기본 폰트는 일반적으로 16px -->
+      <div style="font-size: 2em">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ab
+        ex magnam harum ipsam esse saepe dolor vero non molestias, odio minima
+        ratione magni, nemo soluta dolorem maxime, odit dolores.
+      </div>
+      <!-- root, html의 정의된 폰트값 -->
+      <div style="font-size: 2rem">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ab
+        ex magnam harum ipsam esse saepe dolor vero non molestias, odio minima
+        ratione magni, nemo soluta dolorem maxime, odit dolores.
+      </div>
     </div>
-    <div style="font-size: 100%">
-      <!-- %는 상위 요소에서 관련 크기 값을 가져오겠다-->
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sed
-      voluptas itaque cum maxime accusamus minus quos maiores cumque.
-      Perspiciatis porro reiciendis numquam sapiente distinctio ex incidunt
-      facilis itaque illum!
+    <!-- 텍스트 크기 ... ->wh 크기-->
+    <div style="width: 400px; height: 400px; background-color: cadetblue">
+      <div style="width: 50%; height: 50%; background-color: goldenrod"></div>
+      <!--요소의 크기에 관련도 em도 폰트사이즈에 영향을 받음-->
+      <div style="width: 2em; height: 1em; background-color: skyblue"></div>
     </div>
+    <!--vw, vh : 브라우저의 가로/세로 길이(개발자 도구 및 주소창 빼고)-->
+    <div style="background-color: aqua; width: 100vw; height: 100vh"></div>
   </body>
 </html>
